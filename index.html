@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Конвертор</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<style>
+		body {
+			margin-top: 70px;
+			background-color: #333;
+			color: #fff;
+		}
+
+		.card-block	{padding: 10px}
+	</style>
+</head>
+<body>
+	<div class="comtainer">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<h1 class="display-3 text-center">Конвертор валюти</h1>
+				<form>
+					<div class="form-group">
+						<input type="number" id="kmInput" placeholder="Введіть сумму..." class="form-control form-control-lg">
+					</div>
+				</form>
+				<h5>Р.S В копійках нерахуєм :)</h5>
+				<div id="output">
+					<div class="card alert-warning mb-2">
+						<div class="card-blok">
+							<h4>Доларів:</h4>
+							<div id="metresOutput"></div>
+						</div>
+					</div>
+					<div class="card alert-primary mb-2">
+						<div class="card-blok">
+							<h4>Євро:</h4>
+							<div id="smOutput"></div>
+						</div>
+					</div>
+				<div class="card alert-success mb-2">
+					<div class="card-blok">
+						<h4>Біткоін:</h4>
+						<div id="mlOutput"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		document.getElementById('kmInput').addEventListener('input', function(e) {
+			let km = e.target.value;
+		
+var dol = 26
+var sumad = km / dol
+var sumadolara = Math.round(sumad);
+ document.getElementById('metresOutput').innerHTML = sumadolara;
+	
+var eur = 30.04
+var sumae = km / eur
+var sumaeuro = Math.round(sumae);
+	document.getElementById('smOutput').innerHTML = sumaeuro;
+
+var bit = 0.0000039
+	document.getElementById('mlOutput').innerHTML = km * bit;
+		});
+	</script>
+</body>
+</html>
