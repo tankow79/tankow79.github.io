@@ -24,7 +24,7 @@
 						<input type="number" id="kmInput" placeholder="Введіть сумму..." class="form-control form-control-lg">
 					</div>
 				</form>
-				<h5>Р.S В копійках нерахуєм ;)</h5>
+				<h5>Р.S В копійках нерахуєм :)</h5>
 				<div id="output">
 					<div class="card alert-warning mb-2">
 						<div class="card-blok">
@@ -40,7 +40,7 @@
 					</div>
 				<div class="card alert-success mb-2">
 					<div class="card-blok">
-						<h4>Біткоін:</h4>
+						<h4>Рублів:</h4>
 						<div id="mlOutput"></div>
 						</div>
 					</div>
@@ -48,23 +48,53 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 	
 	<script>
-		document.getElementById('kmInput').addEventListener('input', function(e) {
-			let km = e.target.value;
+
+	var dol
+	var eur
+	var ru
+
+	$(document).ready(function(){
+	getRate();
+	});
+
+	function getRate(){
+		$.get(
+			"https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",
+			function(data){
+				//data = JSON.parse(data);
+				//console.log(data[0]['buy']);
+				// dol = (data[0]['buy']);
+				// eur = (data[1]['buy'])
+				// bit = (data[3]['buy'])
+				dol = (data[0]['sale']);
+				eur = (data[1]['sale'])
+				ru = (data[2]['sale'])
+				
+			}
+		);
+	}
+
+	document.getElementById('kmInput').addEventListener('input', function(e) {
+		let km = e.target.value;
 		
-var dol = 26
-var sumad = km / dol
-var sumadolara = Math.round(sumad);
- document.getElementById('metresOutput').innerHTML = sumadolara;
+
+	//var dol = 39
+	var sumad = km / dol
+	var sumadolara = Math.round(sumad);
+	document.getElementById('metresOutput').innerHTML = sumadolara;
 	
-var eur = 30.04
-var sumae = km / eur
-var sumaeuro = Math.round(sumae);
+	//var eur = 30.04
+	var sumae = km / eur
+	var sumaeuro = Math.round(sumae);
 	document.getElementById('smOutput').innerHTML = sumaeuro;
 
-var bit = 0.0000039
-	document.getElementById('mlOutput').innerHTML = km * bit;
+	//var bit = 0.0000039
+	document.getElementById('mlOutput').innerHTML = km / ru;
 		});
 	</script>
 </body>
