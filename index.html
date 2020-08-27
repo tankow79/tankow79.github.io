@@ -42,27 +42,36 @@
             <input type="number" id="kmInput" placeholder="Введіть сумму..." class="form-control form-control-lg">
           </div>
         </form>
-        <h5>Р.S В копійках нерахуєм :)</h5>
+<!--         <h5>Р.S В копійках нерахуєм :)</h5> -->
         <div id="output">
-          <div class="card alert-warning mb-2">
-            <div class="card-blok">
-              <h4>Доларів:</h4>
-              <div id="metresOutput"></div>
-            </div>
-          </div>
           <div class="card alert-primary mb-2">
             <div class="card-blok">
-              <h4>Євро:</h4>
-              <div id="smOutput"></div>
+              <h4>Гривень в Доларах = </h4>
+              <div id="dolOutput"></div>
+            </div>
+          </div>
+          <div class="card alert-warning mb-2">
+            <div class="card-blok">
+              <h4>Гривень в Євро = </h4>
+              <div id="eurOutput"></div>
             </div>
           </div>
         <div class="card alert-success mb-2">
           <div class="card-blok">
-            <h4>Рублів:</h4>
-            <div id="mlOutput"></div>
+            <h4>Гривень в Рублях = </h4>
+            <div id="ruOutput"></div>
             </div>
           </div>
         </div>
+        <!--  -->
+        <div class="card alert-danger mb-2">
+          <div class="card-blok">
+            <h4>Доларів в Гривнях = </h4>
+            <div id="grnOutput"></div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
       </div>
     </div>
   </div>
@@ -131,17 +140,22 @@
   //var dol = 39
   var sumad = km / dol
   var sumadolara = Math.round(sumad);
-  document.getElementById('metresOutput').innerHTML = sumadolara;
+  document.getElementById('dolOutput').innerHTML = sumadolara;
   
   //var eur = 30.04
   var sumae = km / eur
   var sumaeuro = Math.round(sumae);
-  document.getElementById('smOutput').innerHTML = sumaeuro;
+  document.getElementById('eurOutput').innerHTML = sumaeuro;
 
-  //var bit = 0.0000039
-  document.getElementById('mlOutput').innerHTML = km / ru;
-    });
+  //var ru = 0.0000039
+  var rubl = km / ru
+  var rublocrugleno = Math.round(rubl);
+  document.getElementById('ruOutput').innerHTML = rublocrugleno;
+    
+  var grn = km * dol
+  var grnocrugleno = Math.round(grn)
+  document.getElementById('grnOutput').innerHTML = grnocrugleno;
+  	});
   </script>
-
 </body>
 </html>
