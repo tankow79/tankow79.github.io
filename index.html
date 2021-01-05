@@ -51,27 +51,26 @@
           <div id="output">
             <div class="card alert-primary mb-2">
               <div class="card-blok">
-                <h4>Гривень в Доларах = </h4>
+                <h4> Доларів = </h4>
                 <div id="dolOutput"></div>
               </div>
             </div>
             <div class="card alert-warning mb-2">
               <div class="card-blok">
-                <h4>Гривень в Євро = </h4>
+                <h4> Євро = </h4>
                 <div id="eurOutput"></div>
               </div>
             </div>
           <div class="card alert-success mb-2">
             <div class="card-blok">
-              <h4>Гривень в Рублях = </h4>
+              <h4> Рублів = </h4>
               <div id="ruOutput"></div>
               </div>
             </div>
           </div>
-        <!--  -->
           <div class="card alert-danger mb-2">
             <div class="card-blok">
-              <h4>Доларів в Гривнях = </h4>
+              <h4>Гривень в долах = </h4>
               <div id="grnOutput"></div>
               </div>
             </div>
@@ -158,25 +157,25 @@
 
   document.getElementById('kmInput').addEventListener('input', function(e) {
     let km = e.target.value;
-    
+  
 
   //var dol = 39
   var sumad = km / dol
-  var sumadolara = Math.round(sumad);
+  var sumadolara = ( Math.floor(sumad * 100) / 100 );
   document.getElementById('dolOutput').innerHTML = sumadolara;
   
   //var eur = 30.04
   var sumae = km / eur
-  var sumaeuro = Math.round(sumae);
+  var sumaeuro = ( Math.floor(sumae * 100) / 100 );
   document.getElementById('eurOutput').innerHTML = sumaeuro;
 
   //var ru = 0.0000039
   var rubl = km / ru
-  var rublocrugleno = Math.round(rubl);
+  var rublocrugleno = ( Math.floor(rubl * 100) / 100 );
   document.getElementById('ruOutput').innerHTML = rublocrugleno;
     
   var grn = km * dol
-  var grnocrugleno = Math.round(grn);
+  var grnocrugleno = ( Math.floor(grn * 100) / 100 );
   document.getElementById('grnOutput').innerHTML = grnocrugleno;
   	});
   </script>
