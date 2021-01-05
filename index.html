@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <style>
     body {
-      margin-top: 70px;
+      margin-top: 100px;
       background-color: #333;
       color: #fff;
     }
@@ -37,7 +37,10 @@
 
     <div class="comtainer">
       <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <!-- <div class="col-md-6 offset-md-3"> -->
+        <div class="col-xs-6 col-md-4">
+        <div class="col-xs-6 col-md-4">
+        <div class="col-xs-6 col-md-4">
           <h1 class="display-3 text-center">Конвертор валюти  </h1>
           <form>
               <div class="form-group">
@@ -48,19 +51,19 @@
           <div id="output">
             <div class="card alert-primary mb-2">
               <div class="card-blok">
-                <h4> Доларів = </h4>
+                <h4>Гривень в Доларах = </h4>
                 <div id="dolOutput"></div>
               </div>
             </div>
             <div class="card alert-warning mb-2">
               <div class="card-blok">
-                <h4> Євго = </h4>
+                <h4>Гривень в Євро = </h4>
                 <div id="eurOutput"></div>
               </div>
             </div>
           <div class="card alert-success mb-2">
             <div class="card-blok">
-              <h4> Рублів = </h4>
+              <h4>Гривень в Рублях = </h4>
               <div id="ruOutput"></div>
               </div>
             </div>
@@ -68,7 +71,7 @@
         <!--  -->
           <div class="card alert-danger mb-2">
             <div class="card-blok">
-              <h4> Гривень в Доларах = </h4>
+              <h4>Доларів в Гривнях = </h4>
               <div id="grnOutput"></div>
               </div>
             </div>
@@ -146,8 +149,8 @@
         // eur = (data[1]['buy'])
         // bit = (data[3]['buy'])
         dol = (data[0]['sale']);
-        eur = (data[1]['sale'])
-        ru = (data[2]['sale'])
+        eur = (data[1]['sale']);
+        ru = (data[2]['sale']);
         
       }
     );
@@ -173,7 +176,7 @@
   document.getElementById('ruOutput').innerHTML = rublocrugleno;
     
   var grn = km * dol
-  var grnocrugleno = Math.round(grn)
+  var grnocrugleno = Math.round(grn);
   document.getElementById('grnOutput').innerHTML = grnocrugleno;
   	});
   </script>
