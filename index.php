@@ -1,90 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <title>Конвертор</title>
-  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
-  <meta name="author" content="Vincent Garreau" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <!-- верхня лінія -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- <!--  <link rel="stylesheet" media="screen" href="css/style.css"> -->
+	<meta charset="utf-8">
+  	<title>Конвертор</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
- <link rel="stylesheet" href="main/css/main.css">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <style>
-
-
-
-    body {
-      /*margin-top: 100px;*/
-      background-color: #333;
-      color: #fff;
-    }
-
-    .card-block {padding: 10px};
-
-    <!-- верхня лінія -->
-    body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .topnav {
-    overflow: hidden;
-    background-color: #333;
-    }
-
-    .topnav a {
-      float: center;
-     color: #f2f2f2;
-     text-align: center;
-     padding: 14px 16px;
-     text-decoration: none;
-      font-size: 23px;
-    }
-
-    .topnav a:hover {
-     background-color: #ddd;
-     color: black;
-    }
-
-    .topnav a.active {
-     background-color: #4CAF50;
-     color: white;
-    }
-
-  </style>
+	
 </head>
 <body>
-  <!-- верхня лінія -->
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <!-- <a href="#news">News</a> -->
-  <a href="https://www.instagram.com/a.nd.r.a.x/" target="_blank">
-    <img src="img/1.png" alt="Сторінка Instagram" title="Сторінка Instagram" style="height: 25px"></a>
-  <!-- <a href="#about">About</a> -->
-  <a href="/ru">© 2019 - 2021 | AndraX</a>
-</div>
+<!-- Підключаю шапку -->
+<?php require "blocks/header.php"?> 
 
-<!-- <div style="padding-left:16px">
-  <h2>Top Navigation Example</h2>
-  <p>Some content..</p>
-</div> -->
-
-<!-- Вмикач партиклів 2 -->
-<!-- count particles -->
-<!-- <div class="count-particles">
-  //показ фпс
-  <span class="js-count-particles">--</span>particles
-</div> -->
-<!-- Вмикач партиклів 1 -->
-<!-- particles.js container -->
-<!--   <div id="particles-js"></div>
-  <div id="page-wrapper"> -->
-
-    <div class="comtainer">
+<!-- Сам сайт -->
+<div class="comtainer">
       <div class="row">
         <!-- <div class="col-md-6 offset-md-3"> -->
         <div class="col-xs-6 col-md-4">
@@ -128,13 +59,14 @@
       </div>
     </div>
 
+<!-- Підключаю footer -->
+<?php require "blocks/footer.php"?>
+</main>
 
-<!-- scripts -->
 <script src="main/particles.js"></script>
 <script src="main/js/app.js"></script>
-<!-- підключення фпс -->
-<!-- stats.js -->
-<!-- <script src="js/lib/stats.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 <script>
   var count_particles, stats, update;
   stats = new Stats;
@@ -155,9 +87,6 @@
   requestAnimationFrame(update);
 </script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-  
   <script>
 
   var dol
@@ -172,11 +101,6 @@
     $.get(
       "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5",
       function(data){
-        //data = JSON.parse(data);
-        //console.log(data[0]['buy']);
-        // dol = (data[0]['buy']);
-        // eur = (data[1]['buy'])
-        // bit = (data[3]['buy'])
         dol = (data[0]['sale']);
         eur = (data[1]['sale']);
         ru = (data[2]['sale']);
@@ -209,5 +133,10 @@
   document.getElementById('grnOutput').innerHTML = grnocrugleno;
   	});
   </script>
+
+
+    
+  
+
 </body>
 </html>
